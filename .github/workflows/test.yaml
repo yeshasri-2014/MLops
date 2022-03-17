@@ -1,0 +1,13 @@
+name: MLops
+on: [push]
+jobs:
+  run:
+    runs-on: [self-hosted,Linux,X64]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Create Object detection report
+        run: |
+          python3 object_detection.py
+          /bin/echo '### Object Detection using SSD_MobileNet_v2 ###' >> report.md
+          cml-publish image_new.jpg --md >> report.md
+          cml-send-comment report.md
