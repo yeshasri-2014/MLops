@@ -1,0 +1,11 @@
+name: MLops
+on: [push]
+jobs:
+  run:
+    runs-on: [self-hosted,Linux,X64]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Create CML report
+        run: |
+          echo 'Hi from CML!' >> report.md
+          cml-send-comment report.md
