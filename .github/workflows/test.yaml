@@ -2,10 +2,10 @@ name: MLops
 on: [push]
 jobs:
   run:
-    runs-on: [self-hosted,Linux,X64,local,runner]
+    runs-on: [self-hosted,Linux,X64]
     steps:
       - uses: actions/checkout@v2
-      - name: Create CML report
+      - name: Create Object detection report
         run: |
           python3 object_detection.py
           /bin/echo '### Object Detection using inception_resnet_v2 ###' >> report.md
