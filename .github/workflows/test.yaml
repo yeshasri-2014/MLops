@@ -8,6 +8,6 @@ jobs:
       - name: Create CML report
         run: |
           python3 object_detection.py
-          /bin/echo '## Object Detection using inception_resnet_v2 ##' >> report.md
+          /bin/echo '### Object Detection using inception_resnet_v2 ###' >> report.md
           cml-publish image_new.jpg --md >> report.md
           cml-send-comment report.md
