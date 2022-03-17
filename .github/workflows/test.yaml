@@ -7,7 +7,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Create CML report
         run: |
-          python 3 object_detection.py
+          python3 object_detection.py
           /bin/echo '## Object Detection using inception_resnet_v2 ##' >> report.md
           cml-publish image_new.jpg --md >> report.md
           cml-send-comment report.md
