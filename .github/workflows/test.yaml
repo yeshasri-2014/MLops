@@ -7,5 +7,5 @@ jobs:
       - uses: actions/checkout@v2
       - name: Create CML report
         run: |
-          /bin/echo 'Hi from MLops!' >> report.md
+          /bin/echo 'Hi from MLops to Amar !' >> report.md
           cml-send-comment report.md
