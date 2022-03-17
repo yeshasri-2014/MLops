@@ -156,6 +156,7 @@ def run_detector(detector, path):
   print("Detection Scores : ", result["detection_scores"])
 
 if __name__ == "__main__":
+    
     #module_handle = "https://tfhub.dev/google/faster_rcnn/openimages_v4/inception_resnet_v2/1"
     module_handle = "https://tfhub.dev/google/openimages_v4/ssd/mobilenet_v2/1"
     detector = hub.load(module_handle).signatures['default']
